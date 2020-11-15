@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using RentleForm.Classes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,17 +26,7 @@ namespace RentleForm
 
         private void FillGenderComboBox()
         {
-            cb_gender.Items.Add("Homme");
-            cb_gender.Items.Add("Femme");
-            cb_gender.SelectedIndex = 0;
-            tb_name.Text = "Hamza";
-            tb_surname.Text = "Khattabi";
-            tb_email.Text = "hamzaa.khtb@gmail.com";
-            tb_gsm.Text = "0492160994";
-            tb_street.Text = "Rue Jean-Baptiste Decock, 17";
-            tb_zipcode.Text = "1080";
-            tb_city.Text = "Bruxelles";
-            tb_country.Text = "Belgique";
+            FormUtils.FillGenderComboBox(ref cb_gender);
         }
 
         private bool IsFieldFilled()
@@ -52,7 +43,7 @@ namespace RentleForm
             return true;
         }
 
-        private void onSubmit(object sender, EventArgs e)
+        private async void onSubmit(object sender, EventArgs e)
         {
             bool isFieldFilled = IsFieldFilled();
 
@@ -68,13 +59,22 @@ namespace RentleForm
                 string city = tb_city.Text;
                 string country = tb_country.Text;
 
-                Guarantor guarantor = new Guarantor(gender, name, surname, email, gsm);
+                Guarantor guarantor = new Guarantor(null,gender, name, surname, email, gsm);
                 guarantor.Address = new Location(street, zipcode, city, country);
 
                 Dictionary<string, object> guarantorDic = Utils.ToDictionnary(guarantor);
-                string guarantorJSON = JsonConvert.SerializeObject(guarantorDic);
+                string guarantorJSON = Utils.ToJson(guarantorDic);
 
-                Utils.Post(guarantorJSON);
+                APIRes response = await Utils.Post(@"http://localhost:5000/api/guarantors",guarantorJSON);
+
+                if (response.Success)
+                {
+                    MessageBox.Show(response.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+                MessageBox.Show(response.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+
             }
         }
     }

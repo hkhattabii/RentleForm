@@ -16,7 +16,7 @@ namespace RentleForm
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GuarantorForm());
+            Application.Run(new Form1());
         }
     }
 }

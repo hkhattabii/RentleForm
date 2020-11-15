@@ -17,8 +17,12 @@ namespace RentleForm
             switch (button.Name)
             {
                 case "bt_guarantorForm":
+                    GuarantorForm guarantorForm = new GuarantorForm();
+                    guarantorForm.ShowDialog();
                     break;
                 case "bt_occupantForm":
+                    OccupantForm occupantForm = new OccupantForm();
+                    occupantForm.ShowDialog();
                     break;
                 default:
                     break;

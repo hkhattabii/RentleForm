@@ -12,3 +12,4 @@ C:\Users\hamza\Desktop\Cours\Q5\WEB\RentleForm\obj\Debug\RentleForm.pdb
 C:\Users\hamza\Desktop\Cours\Q5\WEB\RentleForm\bin\Debug\Newtonsoft.Json.dll
 C:\Users\hamza\Desktop\Cours\Q5\WEB\RentleForm\bin\Debug\Newtonsoft.Json.xml
 C:\Users\hamza\Desktop\Cours\Q5\WEB\RentleForm\obj\Debug\RentleForm.csproj.CopyComplete
+C:\Users\hamza\Desktop\Cours\Q5\WEB\RentleForm\obj\Debug\RentleForm.OccupantForm.resources

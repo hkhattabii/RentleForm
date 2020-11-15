@@ -197,9 +197,9 @@ namespace RentleForm
             // 
             // bt_submit
             // 
-            this.bt_submit.Location = new System.Drawing.Point(85, 287);
+            this.bt_submit.Location = new System.Drawing.Point(62, 288);
             this.bt_submit.Name = "bt_submit";
-            this.bt_submit.Size = new System.Drawing.Size(130, 48);
+            this.bt_submit.Size = new System.Drawing.Size(109, 39);
             this.bt_submit.TabIndex = 18;
             this.bt_submit.Text = "Ajouter";
             this.bt_submit.UseVisualStyleBackColor = true;

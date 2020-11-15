@@ -41,6 +41,7 @@ namespace RentleForm
             this.bt_occupantForm.TabIndex = 1;
             this.bt_occupantForm.Text = "Ajouter un locataire";
             this.bt_occupantForm.UseVisualStyleBackColor = true;
+            this.bt_occupantForm.Click += new System.EventHandler(this.onButtonClick);
             // 
             // bt_guarantorForm
             // 
@@ -60,6 +61,7 @@ namespace RentleForm
             this.Controls.Add(this.bt_guarantorForm);
             this.Controls.Add(this.bt_occupantForm);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);

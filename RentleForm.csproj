@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{414E9EB7-FC7F-41EA-BA2C-44898F15B0A2}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <RootNamespace>RentleForm</RootNamespace>
     <AssemblyName>RentleForm</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -52,6 +52,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\APIRes.cs" />
+    <Compile Include="Classes\Document.cs" />
+    <Compile Include="Classes\FormUtils.cs" />
+    <Compile Include="Classes\Occupant.cs" />
+    <Compile Include="Classes\Person.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +71,12 @@
       <DependentUpon>GuarantorForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\Location.cs" />
+    <Compile Include="OccupantForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OccupantForm.Designer.cs">
+      <DependentUpon>OccupantForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Classes\Utils.cs" />
@@ -74,6 +85,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GuarantorForm.resx">
       <DependentUpon>GuarantorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OccupantForm.resx">
+      <DependentUpon>OccupantForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
