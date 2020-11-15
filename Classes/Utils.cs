@@ -12,9 +12,9 @@ namespace RentleForm
     public static class Utils
     {
         private static readonly HttpClient client = new HttpClient();
-        public static async void Post(Dictionary<string, string> body)
+        public static async void Post(string body)
         {
-            FormUrlEncodedContent data = new FormUrlEncodedContent(body);
+            HttpContent data = new StringContent(body, Encoding.UTF8, "application/json");
             HttpResponseMessage response = await client.PostAsync(@"http://localhost:5000/api/guarantors", data);
             string responseString = await response.Content.ReadAsStringAsync();
             Console.WriteLine(responseString);

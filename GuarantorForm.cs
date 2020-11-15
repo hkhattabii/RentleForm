@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,6 +28,14 @@ namespace RentleForm
             cb_gender.Items.Add("Homme");
             cb_gender.Items.Add("Femme");
             cb_gender.SelectedIndex = 0;
+            tb_name.Text = "Hamza";
+            tb_surname.Text = "Khattabi";
+            tb_email.Text = "hamzaa.khtb@gmail.com";
+            tb_gsm.Text = "0492160994";
+            tb_street.Text = "Rue Jean-Baptiste Decock, 17";
+            tb_zipcode.Text = "1080";
+            tb_city.Text = "Bruxelles";
+            tb_country.Text = "Belgique";
         }
 
         private bool IsFieldFilled()
@@ -50,7 +59,7 @@ namespace RentleForm
             if (isFieldFilled)
             {
                 string gender = (string) cb_gender.SelectedItem;
-                string name = tb_name.Name;
+                string name = tb_name.Text;
                 string surname = tb_surname.Text;
                 string email = tb_email.Text;
                 string gsm = tb_gsm.Text;
@@ -60,11 +69,12 @@ namespace RentleForm
                 string country = tb_country.Text;
 
                 Guarantor guarantor = new Guarantor(gender, name, surname, email, gsm);
-                guarantor.Location = new Location(street, zipcode, city, country);
+                guarantor.Address = new Location(street, zipcode, city, country);
 
-                Dictionary<string, object> dic = Utils.ToDictionnary(guarantor);
+                Dictionary<string, object> guarantorDic = Utils.ToDictionnary(guarantor);
+                string guarantorJSON = JsonConvert.SerializeObject(guarantorDic);
 
-                Console.Write(dic);
+                Utils.Post(guarantorJSON);
             }
         }
     }

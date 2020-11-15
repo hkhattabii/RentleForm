@@ -13,7 +13,7 @@ namespace RentleForm
         public string Surname { get; set; }
         public string Email { get; set; }
         public string Gsm { get; set; }
-        public Location Location { get; set; }
+        public Location Address { get; set; }
 
 
         public Guarantor(string Gender, string Name, string Surname, string Email, string Gsm )
@@ -21,6 +21,7 @@ namespace RentleForm
             this.Gender = Gender;
             this.Name = Name;
             this.Surname = Surname;
+            this.Email = Email;
             this.Gsm = Gsm;
         }
     }
