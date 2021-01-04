@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{414E9EB7-FC7F-41EA-BA2C-44898F15B0A2}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <RootNamespace>RentleForm</RootNamespace>
     <AssemblyName>RentleForm</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -55,6 +55,7 @@
     <Compile Include="Classes\APIRes.cs" />
     <Compile Include="Classes\Document.cs" />
     <Compile Include="Classes\FormUtils.cs" />
+    <Compile Include="Classes\GenBody.cs" />
     <Compile Include="Classes\Occupant.cs" />
     <Compile Include="Classes\Person.cs" />
     <Compile Include="Form1.cs">
@@ -64,6 +65,12 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\Guarantor.cs" />
+    <Compile Include="Grid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grid.Designer.cs">
+      <DependentUpon>Grid.cs</DependentUpon>
+    </Compile>
     <Compile Include="GuarantorForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +89,9 @@
     <Compile Include="Classes\Utils.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grid.resx">
+      <DependentUpon>Grid.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GuarantorForm.resx">
       <DependentUpon>GuarantorForm.cs</DependentUpon>

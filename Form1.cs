@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using RentleForm.Classes;
 
 namespace RentleForm
 {
@@ -24,14 +25,15 @@ namespace RentleForm
                     OccupantForm occupantForm = new OccupantForm();
                     occupantForm.ShowDialog();
                     break;
+                case "bt_generateGuarantorDeposit":
+                    MessageBox.Show("Selectionnez un locataire", null, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Grid occupantGrid = new Grid();
+                    occupantGrid.ShowDialog<Occupant>("http://localhost:5000/api/occupants");
+                    break;
                 default:
                     break;
             }
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

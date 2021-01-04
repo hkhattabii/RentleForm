@@ -19,6 +19,7 @@ namespace RentleForm
         {
             HttpContent data = new StringContent(body, Encoding.UTF8, "application/json");
             HttpResponseMessage response = await client.PostAsync(uri, data);
+            Console.WriteLine("RESPONSE :" + response);
             string responseString = await response.Content.ReadAsStringAsync();
             APIRes entity = JsonConvert.DeserializeObject<APIRes>(responseString);
             return entity;
